@@ -1,0 +1,12 @@
+server:
+  port: 80
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/ #设置与eureka server交互的地址查询服务和注册服务中心都要依赖这个地址
+  instance:
+    instance-id: microservicecloud-consumer
+    prefer-ip-address: true
+MICROSERVICECLOUD-PROVIDER:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
